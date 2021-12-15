@@ -1,0 +1,71 @@
+{
+	"name": "Widget Data Source",
+	"description": "Central Data Source for Widgets supporting filtering",
+	"eula": "",
+	"vendor": "SAP",
+	"license": "",
+	"id": "com.sap.sample.widgetdatasource",
+	"newInstancePrefix": "WidgetDataSource",
+	"version": "0.0.1",
+	"webcomponents": [
+        {
+			"kind": "main",
+			"tag": "com-sap-widget-datasource",
+            "url": "https://widgetdatasource.s3-ap-southeast-2.amazonaws.com/datasource.js",
+            "integrity": "",
+            "ignoreIntegrity" : true
+        },
+        {
+			"kind": "builder",
+			"tag": "com-sap-widget-datasource-builder",
+			"url": "https://widgetdatasource.s3-ap-southeast-2.amazonaws.com/builder.js",
+			"integrity": "",
+			"ignoreIntegrity": true
+		}
+    ],
+	"properties": {
+		"JSONUrl": {
+			"type": "string",
+			"description": "JSON Source",
+			"default": ""
+		},
+		"RefreshTime": {
+			"type": "integer",
+			"default": 3600
+		},
+		"width": {
+			"type": "integer",
+			"default": 100
+		},
+		"height": {
+			"type": "integer",
+			"default": 100
+		}
+	},
+	"methods": {
+		"getRawData": {
+			"description": "Gets the current data",
+			"parameters": []
+        },
+		"getFilteredData": {
+			"description": "Gets the current data",
+			"parameters": []
+        },
+		"getJSONData": {
+			"description": "Gets the current dataset as JSON String",
+			"parameters": [
+                {
+					"name": "type",
+					"type": "string",
+					"description": "raw or filtered"
+				}
+            ],
+            "returnType": "string"
+        }
+	},
+	"events": {
+        "onDataUpdate": {
+			"description": "Data set has been updated"
+		}
+	}
+}

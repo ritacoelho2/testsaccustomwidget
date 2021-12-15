@@ -1,0 +1,136 @@
+{
+	"name": "Measure Tile",
+	"description": "Tile for Measures from fire feed",
+	"eula": "",
+	"vendor": "SAP",
+	"license": "",
+	"id": "com.sap.sample.measuretile",
+	"newInstancePrefix": "MeasureTile",
+	"version": "0.0.1",
+	"icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAA3NCSVQICAjb4U/gAAAAb1BMVEX///+ZmZl4dXdBPj9hYGGOjpE6ODo8OjwvLC0lISIpJSaMiooyLzH/cjMxLi9GREb/ZSk2MzV9fX1MSks4NjcrJyn/WR9ycnJRT1AtKiv/TRVdXF1ra2v7VCfJyMk+PD6tra+rqqtUUlU0MTNqaGpjxDg2AAAAAXRSTlMAQObYZgAAAAlwSFlzAAAOxAAADsQBlSsOGwAAAKhJREFUGNM9z9EagiAMBeDpEGkWNAGhqFTq/Z8xwK/+q7PtZgeg6npEMcBPJ0d1Kmg6ZnFGRZcLESnR7tpoouuVSCPPZYHWee+XxTsrvQeYQrwV97tL5uZigMeoqucTUSnWEVBX4fWaW2BYz1W3bXsLDPldcD8MoYZ3glmMjNbGLJk5igDgnLTGHazdAPo1Gdms2bZXhRmbMuNR5rNWJuX075sMYg57jV94IQ2Xqt1atQAAAABJRU5ErkJggg==",
+	"imports": ["standard"],
+    "webcomponents": [
+        {
+			"kind": "main",
+			"tag": "com-sap-sample-measuretile",
+            "url": "https://measuretile.s3-ap-southeast-2.amazonaws.com/tile.js",
+            "integrity": "",
+            "ignoreIntegrity" : true
+        },
+        {
+            "kind": "builder",
+            "tag": "com-demo-measuretile-builder",
+            "url": "https://measuretile.s3-ap-southeast-2.amazonaws.com/builder.js",
+            "integrity": "",
+            "ignoreIntegrity": true
+        }
+    ],
+	"properties": {
+		"label": {
+			"type": "string",
+			"description": "Label",
+			"default": "Total"
+		},
+		"headerfont": {
+			"type": "string",
+			"description": "Header Font",
+			"default": "Arial"
+		},
+		"headersize": {
+			"type": "string",
+			"description": "Header Font Size",
+			"default": "20px"
+		},
+		"headercolor": {
+			"type": "string",
+			"description": "Header Color"
+		},
+		"measurefont": {
+			"type": "string",
+			"description": "Measure Font",
+			"default": "Arial"
+		},
+		"measuresize": {
+			"type": "string",
+			"description": "Measure Font Size",
+			"default": "30px"
+		},
+		"measurecolor": {
+			"type": "string",
+			"description": "Measure Color"
+		},
+		"width": {
+			"type": "integer",
+			"default": 100
+		},
+		"height": {
+			"type": "integer",
+			"default": 100
+		}
+	},
+	"methods": {
+        "setData": {
+			"description": "Sets the values for design of Tile.",
+            "parameters": [
+				{
+					"name": "newData",
+					"type": "string",
+					"description": "JSON Feed data"
+				},
+				{
+					"name": "dimName",
+					"type": "string",
+					"description": "Dimension to use for SUM"
+				},
+				{
+					"name": "dimValue",
+					"type": "string",
+					"description": "Dimension values to use for SUM"
+				},
+				{
+					"name": "type",
+					"type": "string",
+					"description": "COUNT, COUNT DISTINCT, SUM"
+				}
+            ]  
+        },
+		"setValue": {
+			"description": "Sets the values for design of Tile.",
+			"parameters": [
+				{
+					"name": "newHFont",
+					"type": "string",
+					"description": "Header Font"
+				},
+				{
+					"name": "newHSize",
+					"type": "string",
+					"description": "Header Size"
+				},
+				{
+					"name": "newHColor",
+					"type": "string",
+					"description": "Header Color"
+				},
+				{
+					"name": "newMFont",
+					"type": "string",
+					"description": "Measure Font"
+				},
+				{
+					"name": "newMSize",
+					"type": "string",
+					"description": "Measure Size"
+				},
+				{
+					"name": "newMColor",
+					"type": "string",
+					"description": "Measure Color"
+				}
+			],
+			"body": "this.headerfont = newHFont; this.headersize = newHSize; this.headercolor = newHColor; this.measurefont = newMFont; this.measuresize = newMSize; this.measurecolor = newMColor;"
+		}
+	},
+	"events": {
+	}
+}

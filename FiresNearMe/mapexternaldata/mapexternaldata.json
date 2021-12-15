@@ -1,0 +1,58 @@
+{
+	"id": "com.demo.map.externaldata",
+	"version": "1.1.0",
+	"name": "My Map",
+	"description": "A map demo",
+	"newInstancePrefix": "mymap",
+	"icon": "https://googlemapslimited.s3-ap-southeast-2.amazonaws.com/sap.png",
+	"vendor": "SAP",
+	"eula": "",
+	"license": "",
+	"webcomponents": [
+		{
+			"kind": "main",
+			"tag": "com-demo-map-external-data",
+			"url": "https://mapexternaldata.s3-ap-southeast-2.amazonaws.com/mapexternaldata.js",
+			"integrity": "",
+			"ignoreIntegrity": true
+		}
+	],
+	"properties": {
+		"mylocation": {
+			"type": "string",
+			"description": "The Location On the Map",
+			"default" : ""
+		}
+	},
+	"methods": {
+		"setData": {
+            "description": "Sets the data for the map.",
+            "parameters": [
+				{
+					"name": "newData",
+					"type": "string",
+					"description": "JSON Feed data"
+				}
+            ]
+		},
+		"getActiveMarker": {
+			"description": "Get active marker",
+            "returnType": "string"
+		},
+		"highlightFeatures": {
+			"description": "Highlight specifc features",
+			"parameters": [
+				{
+					"name": "features",
+					"type": "string",
+					"description": "Features to highlight"
+				}
+			]
+		}
+	},
+	"events": {
+		"onMarkerSelect": {
+			"description": "markerSelected"
+		}
+	}
+}

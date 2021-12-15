@@ -1,0 +1,48 @@
+{
+	"id": "com.demo.ui5chart",
+	"version": "1.1.0",
+	"name": "UI5 Chart",
+	"description": "UI5 Chart in SAC",
+	"newInstancePrefix": "chart",
+	"icon": "https://googlemapslimited.s3-ap-southeast-2.amazonaws.com/sap.png",
+	"vendor": "SAP",
+	"eula": "",
+	"license": "",
+	"webcomponents": [
+		{
+			"kind": "main",
+			"tag": "com-demo-ui5-chart",
+			"url": "https://ui5chart.s3-ap-southeast-2.amazonaws.com/chart.js",
+			"integrity": "",
+			"ignoreIntegrity": true
+		}
+	],
+	"properties": {
+	},
+	"methods": {
+		"setData": {
+            "description": "Sets the data for the chart.",
+            "parameters": [
+				{
+					"name": "newData",
+					"type": "string",
+					"description": "JSON Feed data"
+				},
+				{
+					"name": "details",
+					"type": "string",
+					"description": "Chart Config"
+				}
+            ]
+		},
+		"getSelection": {
+			"description": "selection data",
+            "returnType": "string"
+		}
+	},
+	"events": {
+		"onSelect": {
+			"description": "Selection on chart update"
+		}
+	}
+}
